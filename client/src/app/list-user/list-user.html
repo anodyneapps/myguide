@@ -1,0 +1,59 @@
+<!-- <div> 
+	<div style="text-align: center"> 
+		<h1 style="color: green"> 
+			GeeksforGeeks</h1> 
+		<h3>Angular Material List</h3> 
+	</div> 
+	<h5>Simple List:</h5> 
+	<mat-list> 
+		<mat-list-item> Angular </mat-list-item> 
+		<mat-list-item> Vue </mat-list-item> 
+		<mat-list-item> React </mat-list-item> 
+	</mat-list> 
+	<h5> Action List</h5> 
+	<mat-action-list> 
+		<button mat-list-item (click)="save()"> 
+			Save 
+		</button> 
+		<button mat-list-item (click)="undo()"> 
+			Undo 
+		</button> 
+	</mat-action-list> 
+	<h5> Selection List</h5> 
+	<mat-selection-list #css> 
+		<mat-list-option *ngFor="let type of typesOfCSS"> 
+			{{type}} 
+		</mat-list-option> 
+	</mat-selection-list> 
+	<br> 
+	<p> 
+		Options selected: {{css.selectedOptions.selected.length}} 
+	</p> 
+</div> -->
+
+<h2 class="text-center m-5">Users List</h2>
+ 
+<table class="table table-striped table-bordered">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Position</th>
+			<th>Level</th>
+			<th>Action</th>
+		</tr>
+	</thead>
+
+	<tbody>
+		<tr *ngFor="let user of users$ | async">
+			<td>{{user.user_name}}</td>
+			<td>{{user.email_address}}</td>
+			<td>{{user.display_name}}</td>
+			<td>
+				<button class="btn btn-primary me-1" [routerLink]="['edit/', user._id]">Edit</button>
+				<button class="btn btn-danger" (click)="deleteUser(user._id || '')">Delete</button>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<button class="btn btn-primary mt-3" [routerLink]="['new']">Add a New User</button>
