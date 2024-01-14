@@ -13,6 +13,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UserPreferencesListComponent } from './user-preferences-list/user-preferences-list.component';
 import { ListUserComponent } from './list-user/list-user.component';
+import { UserFormComponent } from './user-form/user-form.component';
+import { AddUserComponent } from './add-user/add-user.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { ListUserComponent } from './list-user/list-user.component';
     AddEmployeeComponent,
     EditEmployeeComponent,
     UserPreferencesListComponent,
-    ListUserComponent
+    ListUserComponent,
+    UserFormComponent,
+    AddUserComponent
   ],
   imports: [
     BrowserModule,
